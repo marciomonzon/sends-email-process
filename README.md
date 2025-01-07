@@ -5,7 +5,7 @@
 * .NET 8;
 * ASP.NET API Core (SendsEmail);
 * .NET Worker Service (SendEmailWorker);
-* RabbitMq Client (Both projects);
+* RabbitMq Client nugget package (Both projects);
 * RabbitMq Server;
 
 ## How it Works?
