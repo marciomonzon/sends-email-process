@@ -3,9 +3,9 @@
 
 ## Stack
 * .NET 8;
-* ASP.NET API Core;
-* .NET Worker Service;
-* RabbitMQ Client.
+* ASP.NET API Core (SendsEmail);
+* .NET Worker Service (SendEmailWorker);
+* RabbitMQ Client (Both projects).
 
 ## How it Works?
 <p>Please, take a look in the diagram below to understand its flow.</p>
