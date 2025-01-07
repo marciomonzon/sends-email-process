@@ -1,8 +1,9 @@
-﻿namespace SendsEmail.API.Services.Interfaces
+﻿using SendsEmail.API.Dtos;
+
+namespace SendsEmail.API.Services.Interfaces
 {
     public interface IEmailService
     {
-        void SetConfiguration();
-        Task<bool> SendEmailAsync(string subject, string body, string recipientEmail);
+        Task<bool> NotifyToSendEmailAsync(EmailDto dto);
     }
 }
