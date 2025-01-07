@@ -1,3 +1,5 @@
+using SendEmailWorker.Services;
+
 namespace SendEmailWorker
 {
     public class Worker : BackgroundService
@@ -11,13 +13,22 @@ namespace SendEmailWorker
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
+            var emailService = new SendEmailService();
+            var brokerService = new BrokerService();
+
             while (!stoppingToken.IsCancellationRequested)
             {
-                if (_logger.IsEnabled(LogLevel.Information))
+                var emailFromQueue = await brokerService.GetEmailNotificationAsync();
+
+                if(emailFromQueue.Body != string.Empty)
                 {
-                    _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
+                    emailService.SendEmail(new Dtos.EmailDto
+                    {
+                        Body = emailFromQueue.Body,
+                        RecipientEmail = emailFromQueue.RecipientEmail,
+                        Subject = emailFromQueue.Subject
+                    });
                 }
-                await Task.Delay(1000, stoppingToken);
             }
         }
     }
