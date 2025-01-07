@@ -1,5 +1,5 @@
 # Email Notification Service
-<p>This project is a Email Notification Service made for stuying purpose. This should not be use in a Prod Env.</p>
+<p>This project is a Email Notification Service made for studying purpose. This should not be use in a Prod Env.</p>
 
 ## Stack
 * .NET 8;
