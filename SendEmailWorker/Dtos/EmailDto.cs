@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SendsEmail.API.Dtos
+namespace SendEmailWorker.Dtos
 {
     public class EmailDto
     {
@@ -14,6 +14,6 @@ namespace SendsEmail.API.Dtos
         public string RecipientEmail { get; set; } = string.Empty;
 
         [Required]
-        public DateTime NotificationSendDate { get; set; }
+        public DateTime NotificationSendDate { get; set; } = DateTime.Now;
     }
 }
