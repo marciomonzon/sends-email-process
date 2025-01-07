@@ -5,9 +5,13 @@
 * .NET 8;
 * ASP.NET API Core (SendsEmail);
 * .NET Worker Service (SendEmailWorker);
-* RabbitMQ Client (Both projects).
+* RabbitMq Client (Both projects);
+* RabbitMq Server;
 
 ## How it Works?
+* The API, SendsEmail, sends the e-mail settings and body to the RabbitMq Server (Queue);
+* The Worker Service, SendEmailWorker, get this message from the queue and send an email using smtp server.
+
 <p>Please, take a look in the diagram below to understand its flow.</p>
 
 <br>
